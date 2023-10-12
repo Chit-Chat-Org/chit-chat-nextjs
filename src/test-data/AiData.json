@@ -1,0 +1,127 @@
+{
+    "status": "Success",
+    "response": {
+        "data": [
+            {
+                "_id": "6512f3bb5bc54d20840cd5ce",
+                "organizationId": "6512edfcc6ddd89f2d771a9b",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/context.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-context.txt",
+                "apiKey": "$2b$10$NnBWbQJ9xTjOgl0bKnGbrujGasF9xSFnmrC3d/8kmSLKNmwVrsCF2",
+                "originalAPIKey": "797048b2afd4d88827379a7aa6f7b4a522afc0394f06a27d709fa451b7d13a6a1e1ab798859183fe1d6704ed4c76325b902bd1a379f225e947af128a9ebdb26b06d1dda3323e12cbfaec781432bb1e1a89e3af77c4f92ccabd58d9c4309cb03f4d26b8f7fd2dd3aa66b4c5e895705df6b18754ddfc874a3dee9ec2456adaa4271d535048ce9b39957127650706b8b24a97f55c6015f7e47708bd3f691e7ac44d955e812daa81446a4d3928166e000d747429e285c921004bd8736d571c833e1b95f35ba2f7fd0521efa6fbe12ce3d648",
+                "isDisabled": false,
+                "createdAt": "2023-09-26T15:06:57.282Z",
+                "__v": 0
+            },
+            {
+                "_id": "65145684579d162c433d477e",
+                "organizationId": "6512edfcc6ddd89f2d771a9b",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$ug2pzSVfCxO0E5mfw3C14.HJOlxrEZy6YJC8OoNSJygKNvGmtqRnO",
+                "originalAPIKey": "223015d4f6ccc9b44c38474298ae7474e40a8d3b604191e26c61971b8975bd6bde84017776cb217132f9ff24490b5604124592d9f77b79854e51c741b339da9237e67480b2af0a9d106e6bebb007e0941e61d2e6519d6b7db9b226bea5d29409002757d260cadb2f351ea409bdd7de7e12a49dd890dcfcf83bc547f42a3e3a3eb0b4e784999631a22c58d2b7e8883fb3fc93e2e7a4e03b45e23f2dd09d52350144f0f85bab4b84355570b67be83c8edabc6f28607cac4a08f2444aa5cf92f96f",
+                "isDisabled": false,
+                "createdAt": "2023-09-27T16:18:15.869Z",
+                "__v": 0
+            },
+            {
+                "_id": "65191e7f956c2d659ac21aa5",
+                "organizationId": "6512edfcc6ddd89f2d771a9b",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$Bh8V/q5ByVe5TnDZ63RTGu3bEPxGtrgwMAaXpTbi9Ux7y6r95NSYm",
+                "originalAPIKey": "259e14280037331294e17a8b0a94b6b692dd6e283ce4b99f951da293e638ae7b5f9e93b801cf5b741aaf65a9637e866e7fc2597782b8dfcea487a61e061c4adfdf406bd86eafbbe3a8751636a688c7ac849787f1b773a08b3476c39dd096d48f8ac66668c4cb4d6a9f997caaa2755d07567a4fdcc6ca94d454fb1cc72c6b2935f46498db7a683fbda97497fc35c1b4485859efa468067c598b8008f803d4d77a00f53a1edac47eb7b3732b102feaac93da66b5f39f85f538f53509a863e3ac59",
+                "isDisabled": false,
+                "createdAt": "2023-10-01T07:21:15.780Z",
+                "__v": 0
+            },
+            {
+                "_id": "65191e9f956c2d659ac21aa7",
+                "organizationId": "6512edfcc6ddd89f2d771a",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$0fZMFPipQstekd.QpUzCMeHEhqofIWCTy4S2wUuhUzbOG7o7HRtc.",
+                "originalAPIKey": "752fa1e269d160646672ca8f4046681eace53a8bfd5797a7e82bbd17ef83581a9828afda59c6dcf1cf4dc6f4ea009293b6b2e9f036f3c41320fb7b828b99cc67d4e4b7ae8af0cb7783afd5f7bd7ae71759f6eeecaf81ddc3fdcefa1ed979183b7360bf524db7b4dc0883c51f61c78891ae0608fef3a58a849f39cb611f912ecd603d5c45ea69899617d331d8fb4779dea4f34f8de040c5a8aa2ccf9d7786fb77ce20f792fb9aa0ade2a82785506e32680dbae667d356b049b74327909c877d90",
+                "isDisabled": false,
+                "createdAt": "2023-10-01T07:21:15.780Z",
+                "__v": 0
+            },
+            {
+                "_id": "65191ea6956c2d659ac21aa9",
+                "organizationId": "6512edfcc6ddd89f2d771a",
+                "organizationName": "p",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$erM99hEswbUfdjTMheT66uBZpCLPdqjmqMv9Wkmj2qRDDqHaxQvU.",
+                "originalAPIKey": "2dba42c03d825d50916d1bfa5ea7aa71b4553b05c530c7d3d884fedc499a8b4fa379d8201633170599ed5c97c3c30a0f8e22821f197ef8effffc0d62c83e5644315c6dfb57d486a8fbd2126756f470fd8ed664373ae1f1eb8183d9a77f94db1e9abf53d73bd3b782f41e4f1567661145900aa65467d78c72f01da1aa86a4387d91650485983020c3635c5ef50c65b61238030b82a98b4bd9a02ae14e64b50cea75196ceb823539b5bf1ff2de9fc8b12e5c38398fdb46c379a4ee41570c9ea3d7",
+                "isDisabled": false,
+                "createdAt": "2023-10-01T07:21:15.780Z",
+                "__v": 0
+            },
+            {
+                "_id": "6512f3bb5bc54d20840cd5ce",
+                "organizationId": "6512edfcc6ddd89f2d771a9b",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/context.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-context.txt",
+                "apiKey": "$2b$10$NnBWbQJ9xTjOgl0bKnGbrujGasF9xSFnmrC3d/8kmSLKNmwVrsCF2",
+                "originalAPIKey": "797048b2afd4d88827379a7aa6f7b4a522afc0394f06a27d709fa451b7d13a6a1e1ab798859183fe1d6704ed4c76325b902bd1a379f225e947af128a9ebdb26b06d1dda3323e12cbfaec781432bb1e1a89e3af77c4f92ccabd58d9c4309cb03f4d26b8f7fd2dd3aa66b4c5e895705df6b18754ddfc874a3dee9ec2456adaa4271d535048ce9b39957127650706b8b24a97f55c6015f7e47708bd3f691e7ac44d955e812daa81446a4d3928166e000d747429e285c921004bd8736d571c833e1b95f35ba2f7fd0521efa6fbe12ce3d648",
+                "isDisabled": false,
+                "createdAt": "2023-09-26T15:06:57.282Z",
+                "__v": 0
+            },
+            {
+                "_id": "65145684579d162c433d477e",
+                "organizationId": "6512edfcc6ddd89f2d771a9b",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$ug2pzSVfCxO0E5mfw3C14.HJOlxrEZy6YJC8OoNSJygKNvGmtqRnO",
+                "originalAPIKey": "223015d4f6ccc9b44c38474298ae7474e40a8d3b604191e26c61971b8975bd6bde84017776cb217132f9ff24490b5604124592d9f77b79854e51c741b339da9237e67480b2af0a9d106e6bebb007e0941e61d2e6519d6b7db9b226bea5d29409002757d260cadb2f351ea409bdd7de7e12a49dd890dcfcf83bc547f42a3e3a3eb0b4e784999631a22c58d2b7e8883fb3fc93e2e7a4e03b45e23f2dd09d52350144f0f85bab4b84355570b67be83c8edabc6f28607cac4a08f2444aa5cf92f96f",
+                "isDisabled": false,
+                "createdAt": "2023-09-27T16:18:15.869Z",
+                "__v": 0
+            },
+            {
+                "_id": "65191e7f956c2d659ac21aa5",
+                "organizationId": "6512edfcc6ddd89f2d771a9b",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$Bh8V/q5ByVe5TnDZ63RTGu3bEPxGtrgwMAaXpTbi9Ux7y6r95NSYm",
+                "originalAPIKey": "259e14280037331294e17a8b0a94b6b692dd6e283ce4b99f951da293e638ae7b5f9e93b801cf5b741aaf65a9637e866e7fc2597782b8dfcea487a61e061c4adfdf406bd86eafbbe3a8751636a688c7ac849787f1b773a08b3476c39dd096d48f8ac66668c4cb4d6a9f997caaa2755d07567a4fdcc6ca94d454fb1cc72c6b2935f46498db7a683fbda97497fc35c1b4485859efa468067c598b8008f803d4d77a00f53a1edac47eb7b3732b102feaac93da66b5f39f85f538f53509a863e3ac59",
+                "isDisabled": false,
+                "createdAt": "2023-10-01T07:21:15.780Z",
+                "__v": 0
+            },
+            {
+                "_id": "65191e9f956c2d659ac21aa7",
+                "organizationId": "6512edfcc6ddd89f2d771a",
+                "organizationName": "pcs",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$0fZMFPipQstekd.QpUzCMeHEhqofIWCTy4S2wUuhUzbOG7o7HRtc.",
+                "originalAPIKey": "752fa1e269d160646672ca8f4046681eace53a8bfd5797a7e82bbd17ef83581a9828afda59c6dcf1cf4dc6f4ea009293b6b2e9f036f3c41320fb7b828b99cc67d4e4b7ae8af0cb7783afd5f7bd7ae71759f6eeecaf81ddc3fdcefa1ed979183b7360bf524db7b4dc0883c51f61c78891ae0608fef3a58a849f39cb611f912ecd603d5c45ea69899617d331d8fb4779dea4f34f8de040c5a8aa2ccf9d7786fb77ce20f792fb9aa0ade2a82785506e32680dbae667d356b049b74327909c877d90",
+                "isDisabled": false,
+                "createdAt": "2023-10-01T07:21:15.780Z",
+                "__v": 0
+            },
+            {
+                "_id": "65191ea6956c2d659ac21aa9",
+                "organizationId": "6512edfcc6ddd89f2d771a",
+                "organizationName": "p",
+                "uploadKnowledge": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/uploads/data.txt",
+                "embeddedKnowlege": "https://infopulse-chatpdf.s3.us-east-2.amazonaws.com/embedding/embeded-data.txt",
+                "apiKey": "$2b$10$erM99hEswbUfdjTMheT66uBZpCLPdqjmqMv9Wkmj2qRDDqHaxQvU.",
+                "originalAPIKey": "2dba42c03d825d50916d1bfa5ea7aa71b4553b05c530c7d3d884fedc499a8b4fa379d8201633170599ed5c97c3c30a0f8e22821f197ef8effffc0d62c83e5644315c6dfb57d486a8fbd2126756f470fd8ed664373ae1f1eb8183d9a77f94db1e9abf53d73bd3b782f41e4f1567661145900aa65467d78c72f01da1aa86a4387d91650485983020c3635c5ef50c65b61238030b82a98b4bd9a02ae14e64b50cea75196ceb823539b5bf1ff2de9fc8b12e5c38398fdb46c379a4ee41570c9ea3d7",
+                "isDisabled": false,
+                "createdAt": "2023-10-01T07:21:15.780Z",
+                "__v": 0
+            }
+        ]
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "status": "Success",
+    "response": {
+        "data": [
+            {
+                "_id": "651829cf27bc198281af755a",
+                "OrganizationName": "apurv jha",
+                "OrganizationWebsite": "amazon.com",
+                "organizationEmail": "apurv@sefsd.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T13:58:38.063Z",
+                "__v": 0
+            },
+            {
+                "_id": "65182c4d3cf256037058bfb4",
+                "OrganizationName": "apurvsdf jha",
+                "OrganizationWebsite": "amazosdgfn.com",
+                "organizationEmail": "apurv@sefsd.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T14:10:09.804Z",
+                "__v": 0
+            },
+            {
+                "_id": "65182e33baa248c0378d713a",
+                "OrganizationName": "apurvsdffg jha",
+                "OrganizationWebsite": "amazosdgffgfn.com",
+                "organizationEmail": "apurv@sefsdhf.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T14:17:59.165Z",
+                "__v": 0
+            },
+            {
+                "_id": "651829cf27bc198281af755a",
+                "OrganizationName": "apurv jha",
+                "OrganizationWebsite": "amazon.com",
+                "organizationEmail": "apurv@sefsd.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T13:58:38.063Z",
+                "__v": 0
+            },
+            {
+                "_id": "65182c4d3cf256037058bfb4",
+                "OrganizationName": "apurvsdf jha",
+                "OrganizationWebsite": "amazosdgfn.com",
+                "organizationEmail": "apurv@sefsd.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T14:10:09.804Z",
+                "__v": 0
+            },
+            {
+                "_id": "65182e33baa248c0378d713a",
+                "OrganizationName": "apurvsdffg jha",
+                "OrganizationWebsite": "amazosdgffgfn.com",
+                "organizationEmail": "apurv@sefsdhf.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T14:17:59.165Z",
+                "__v": 0
+            },
+            {
+                "_id": "651829cf27bc198281af755a",
+                "OrganizationName": "apurv jha",
+                "OrganizationWebsite": "amazon.com",
+                "organizationEmail": "apurv@sefsd.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T13:58:38.063Z",
+                "__v": 0
+            },
+            {
+                "_id": "65182c4d3cf256037058bfb4",
+                "OrganizationName": "apurvsdf jha",
+                "OrganizationWebsite": "amazosdgfn.com",
+                "organizationEmail": "apurv@sefsd.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T14:10:09.804Z",
+                "__v": 0
+            },
+            {
+                "_id": "65182e33baa248c0378d713a",
+                "OrganizationName": "apurvsdffg jha",
+                "OrganizationWebsite": "amazosdgffgfn.com",
+                "organizationEmail": "apurv@sefsdhf.com",
+                "OrganizationPhone": 6544534433445,
+                "isActive": true,
+                "createdAt": "2023-09-30T14:17:59.165Z",
+                "__v": 0
+            }
+        ]
+    }
+}
