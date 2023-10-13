@@ -15,7 +15,7 @@ export default function Upload() {
   const fetch = async () =>{
     const formData = new FormData();
     formData.append("file",File)
-    await axios.post("http://localhost:8000/api/v1/upload",formData).then(
+    await axios.post("https://chit-chat.tech/api/v1/upload",formData).then(
       res => {console.log(res.data?.status)}
     ).catch(err => console.log(err))
   }

@@ -120,11 +120,11 @@ const page = () => {
               />
             </div>
             {isLoading ? (
-              <button disabled className="w-full flex justify-center py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+              <button disabled className="w-full flex justify-center py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
                 <AiOutlineLoading3Quarters className="animate-spin" />
               </button>
             ) : (
-              <button className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+              <button className="w-full py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
                 Submit
               </button>
             )}

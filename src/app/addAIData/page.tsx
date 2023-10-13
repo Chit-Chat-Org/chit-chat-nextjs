@@ -49,9 +49,24 @@ const AddAiModel = () => {
   }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.item(0);
-    if (file) {
-      setFile(file);
+    const selectedFile = e.target.files?.item(0);
+    if (selectedFile && selectedFile.type === 'text/plain') {
+      const file = e.target.files?.item(0);
+      if (file) {
+        setFile(file);
+      }
+    }
+    else{
+      toast.error("Only txt files are allowed!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -86,7 +101,7 @@ const AddAiModel = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/upload",
+        "https://chit-chat.tech/api/v1/upload",
         formData
       );
       toast("Successfully, Submitted !", {
@@ -118,7 +133,7 @@ const AddAiModel = () => {
 
   const SubmitAiModel = async () => {
     const res = await axios.post(
-      "http://localhost:8000/api/v1/addAiTrainingModel",
+      "https://chit-chat.tech/api/v1/addAiTrainingModel",
       AiModel
     );
   };

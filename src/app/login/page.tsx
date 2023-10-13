@@ -40,7 +40,7 @@ const page = () => {
         progress: undefined,
         theme: "light",
       });
-      router.push("/organization")
+      router.push("/dashboard")
     } else {
       toast.error("Failed to Submit !", {
         position: "top-right",

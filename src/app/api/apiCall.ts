@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchs = async () => {
     const res = await axios.get(
-      "http://localhost:8000/api/v1/getAllOrganization"
+      "https://chit-chat.tech/api/v1/getAllOrganization"
     );
   
     return res.data;
@@ -10,7 +10,7 @@ export const fetchs = async () => {
 
 export const getOrganizationById = async (userId: any) => {
     const res = await axios.get(
-      `http://localhost:8000/api/v1/getOrganizationById?UserId=${userId}`
+      `https://chit-chat.tech/api/v1/getOrganizationById?UserId=${userId}`
     );
   
     return res.data;
@@ -18,14 +18,14 @@ export const getOrganizationById = async (userId: any) => {
   
   export const getAiModelById = async (userId: any) => {
     const res = await axios.get(
-      `http://localhost:8000/api/v1/getAiModelById?UserId=${userId}`
+      `https://chit-chat.tech/api/v1/getAiModelById?UserId=${userId}`
     );
   
     return res.data;
   };
 export const fetchAi = async () => {
     const res = await axios.get(
-      "http://localhost:8000/api/v1/getAllAiTrainedData"
+      "https://chit-chat.tech/api/v1/getAllAiTrainedData"
     );
   
     return res.data;
@@ -40,7 +40,7 @@ export const fetchAi = async () => {
   
 export const addOrganization = async (Organization: organization) => {
   const data = await axios.post(
-    "http://localhost:8000/api/v1/newOrganization",
+    "https://chit-chat.tech/api/v1/newOrganization",
     Organization
   );
 
@@ -52,7 +52,7 @@ type user = {
 }
 export const Auth = async(User : user)=>{
   const data = await axios.post(
-      "http://localhost:8000/register/login",
+      "https://chit-chat.tech/register/login",
       User,{
           withCredentials:true
       }
@@ -62,7 +62,7 @@ export const Auth = async(User : user)=>{
 }
 
 export const getOrgWithId = async()=>{
-  const data = await axios.get("http://localhost:8000/api/v1/getOrganizationById",{
+  const data = await axios.get("https://chit-chat.tech/api/v1/getOrganizationById",{
     withCredentials: true
   });
     return data;

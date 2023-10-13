@@ -3,7 +3,7 @@
 import Navbar from "../Components/Navbar";
 import OrgTemp from "./OrgTemp";
 import AiModel from "./AiModel";
-import { fetchs, fetchAi, getOrgWithId, getOrganizationById, getAiModelById } from "../api/apiCall";
+import {  getOrganizationById, getAiModelById } from "../api/apiCall";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Prompt from "../Components/Prompt";
