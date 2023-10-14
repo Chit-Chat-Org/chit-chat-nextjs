@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 import { toast } from "react-toastify";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from 'next/navigation';
-import { Auth } from '../api/apiCall'
+import { SignUp } from '../api/apiCall'
 import Link from "next/link";
 
 const page = () => {
@@ -13,6 +13,7 @@ const page = () => {
   const [isLoading, setisLoading] = useState(false);
   const [User, setUser] = useState({
     UserName: "",
+    UserEmail:"",
     Password:""
   });
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,14 +23,13 @@ const page = () => {
     });
   };
 
-  
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setisLoading(true);
-    const res = await Auth(User);
+    const res = await SignUp(User);
     setisLoading(false);
-    localStorage.setItem('UserId',res.data.response.data._id)
+    localStorage.setItem('UserId',res.data.response.data)
     if (res.status == 200) {
       toast("Organization Submitted !", {
         position: "top-right",
@@ -65,7 +65,7 @@ const page = () => {
             className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"
             style={{ backdropFilter: "blur(4px)" }}
           >
-            <div className="text-gray-950 flex justify-center text-2xl">Sign Up</div>
+            <div className="text-gray-950 flex justify-center text-2xl">Sign In</div>
             <div className="mb-4">
               <label className="block text-gray-600">UserName</label>
               <input
@@ -73,6 +73,16 @@ const page = () => {
                 name="UserName"
                 required
                 minLength={6}
+                onChange={handleChange}
+                className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-pink-500"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-600">Email</label>
+              <input
+                type="email"
+                name="UserEmail"
+                required
                 onChange={handleChange}
                 className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-pink-500"
               />
@@ -99,7 +109,7 @@ const page = () => {
                 Submit
               </button>
             )}
-            <p className="font-sans font-normal flex justify-center p-2">Create An Account  <Link href="/sign-up" className="text-sky-500 underline italic pl-2">Sign Up</Link></p>
+            <p className="font-sans font-normal flex justify-center p-2">Already Have Account  <Link href="/login" className="text-sky-500 underline italic pl-2">Login</Link></p>
           </form>
         </div>
       </div>

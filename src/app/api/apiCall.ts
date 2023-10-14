@@ -53,9 +53,20 @@ type user = {
 export const Auth = async(User : user)=>{
   const data = await axios.post(
       "https://chit-chat.tech/register/login",
-      User,{
-          withCredentials:true
-      }
+      User
+    );
+  
+    return data;
+}
+type users = {
+  UserName: string,
+  UserEmail:string,
+  Password: string
+}
+export const SignUp = async(User : users)=>{
+  const data = await axios.post(
+      "https://chit-chat.tech/register/signup",
+      User
     );
   
     return data;

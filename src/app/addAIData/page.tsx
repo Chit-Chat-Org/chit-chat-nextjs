@@ -15,6 +15,7 @@ type AiModel = {
     organizationName: string;
   };
   url: string;
+  openAIApi:string;
 };
 const AddAiModel = () => {
   const router = useRouter();
@@ -28,6 +29,7 @@ const AddAiModel = () => {
   const [orgData, setOrgData] = useState<any[]>([]);
   const [File, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState<string>("");
+  const [openAIApi, setOpenAIApi] = useState<string>("");
 
   const [AiModel, setAiModel] = useState<AiModel>({
     organization: {
@@ -35,6 +37,7 @@ const AddAiModel = () => {
       organizationName: "",
     },
     url: "",
+    openAIApi:""
   });
 
   useEffect(() => {
@@ -70,6 +73,28 @@ const AddAiModel = () => {
     }
   };
 
+  const isValidOpenAIApi = (key: string): boolean => {
+    return key.startsWith("sk-") && key.length > 50;
+  };
+
+  const handleOpenAIApiChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const enteredApi = e.target.value;
+    if (!isValidOpenAIApi(enteredApi)) {
+      toast.error("Invalid OpenAI API Key", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
+    setOpenAIApi(enteredApi);
+};
+
   useEffect(() => {
     // Update AiModel when selectedOrganization or url changes
     setAiModel({
@@ -78,8 +103,9 @@ const AddAiModel = () => {
         userId: UserId
       },
       url: url,
+      openAIApi: openAIApi
     });
-  }, [selectedOrganization, url]);
+  }, [selectedOrganization, url , openAIApi]);
 
   const fetchFile = async () => {
     if (!File) {
@@ -137,6 +163,7 @@ const AddAiModel = () => {
       AiModel
     );
   };
+  console.log(AiModel)
 
   const handleFileSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -257,7 +284,16 @@ const AddAiModel = () => {
                         )
                       )}
                   </select>
-    
+                  <div className="mb-4">
+              <label className="block text-sm font-medium mb-2">OpenAi ApiKey</label>
+              <input
+                type="text"
+                name="openAIApi"
+                required
+                onChange={handleOpenAIApiChange}
+                className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-indigo-500"
+              />
+            </div>
                   <button
                     type="submit"
                     onClick={handleSubmit}
