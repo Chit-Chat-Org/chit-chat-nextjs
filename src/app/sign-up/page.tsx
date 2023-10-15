@@ -29,8 +29,8 @@ const page = () => {
     setisLoading(true);
     const res = await SignUp(User);
     setisLoading(false);
-    localStorage.setItem('UserId',res.data.response.data)
-    if (res.status == 200) {
+    
+    if (res.data?.status == "Success") {
       toast("Organization Submitted !", {
         position: "top-right",
         autoClose: 5000,
@@ -41,9 +41,10 @@ const page = () => {
         progress: undefined,
         theme: "light",
       });
-      router.push("/dashboard")
+      localStorage.setItem('UserId',res.data.response.data)
+      router.push("/organization")
     } else {
-      toast.error("Failed to Submit !", {
+      toast.error("User Already Exist!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -65,7 +66,7 @@ const page = () => {
             className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"
             style={{ backdropFilter: "blur(4px)" }}
           >
-            <div className="text-gray-950 flex justify-center text-2xl">Sign In</div>
+            <div className="text-gray-950 flex justify-center text-2xl">Sign Up</div>
             <div className="mb-4">
               <label className="block text-gray-600">UserName</label>
               <input

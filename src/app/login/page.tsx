@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import { toast } from "react-toastify";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { useRouter } from 'next/navigation';
-import { Auth } from '../api/apiCall'
+import { useRouter } from "next/navigation";
+import { Auth } from "../api/apiCall";
 import Link from "next/link";
 
 const page = () => {
@@ -13,7 +13,7 @@ const page = () => {
   const [isLoading, setisLoading] = useState(false);
   const [User, setUser] = useState({
     UserName: "",
-    Password:""
+    Password: "",
   });
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUser({
@@ -22,15 +22,32 @@ const page = () => {
     });
   };
 
-  
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setisLoading(true);
     const res = await Auth(User);
     setisLoading(false);
-    localStorage.setItem('UserId',res.data.response.data._id)
-    if (res.status == 200) {
+    if (
+      res &&
+      res.data &&
+      res.data.response &&
+      res.data.response.data &&
+      res.data.response.data._id
+    ) {
+      localStorage.setItem("UserId", res.data.response.data._id);
+    } else {
+      toast.error("Unexpected response structure.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+    if (res.data?.status != "Failed") {
       toast("Organization Submitted !", {
         position: "top-right",
         autoClose: 5000,
@@ -41,9 +58,9 @@ const page = () => {
         progress: undefined,
         theme: "light",
       });
-      router.push("/dashboard")
+      router.push("/dashboard");
     } else {
-      toast.error("Failed to Submit !", {
+      toast.error("Failed to Login !", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -65,7 +82,9 @@ const page = () => {
             className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"
             style={{ backdropFilter: "blur(4px)" }}
           >
-            <div className="text-gray-950 flex justify-center text-2xl">Sign Up</div>
+            <div className="text-gray-950 flex justify-center text-2xl">
+              Log In
+            </div>
             <div className="mb-4">
               <label className="block text-gray-600">UserName</label>
               <input
@@ -91,7 +110,10 @@ const page = () => {
               />
             </div>
             {isLoading ? (
-              <button disabled className="w-full flex justify-center py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
+              <button
+                disabled
+                className="w-full flex justify-center py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700"
+              >
                 <AiOutlineLoading3Quarters className="animate-spin" />
               </button>
             ) : (
@@ -99,7 +121,15 @@ const page = () => {
                 Submit
               </button>
             )}
-            <p className="font-sans font-normal flex justify-center p-2">Create An Account  <Link href="/sign-up" className="text-sky-500 underline italic pl-2">Sign Up</Link></p>
+            <p className="font-sans font-normal flex justify-center p-2">
+              Create An Account{" "}
+              <Link
+                href="/sign-up"
+                className="text-sky-500 underline italic pl-2"
+              >
+                Sign Up
+              </Link>
+            </p>
           </form>
         </div>
       </div>

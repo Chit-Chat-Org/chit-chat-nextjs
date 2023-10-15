@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 import { toast } from "react-toastify";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from 'next/navigation';
-import { addOrganization, getOrgWithId } from '../api/apiCall'
+import { addOrganization } from '../api/apiCall'
 import Prompt from "../Components/Prompt";
 
 const page = () => {

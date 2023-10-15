@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { BsGithub } from "react-icons/bs";
+import Logout from "./Logout";
 
 const Navbar = () => {
   return (
@@ -32,17 +34,23 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                  <Link href="/docs" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                     Docs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                  <Link href='https://github.com/apurvjha123' className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                     About
-                  </a>
+                  </Link>
                 </li>
-                <li></li>
-                <li></li>
+                <li>
+                <Link href='https://github.com/apurvjha123/chit-chat-nextjs' className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    <div className="flex">
+                    <BsGithub className="p-1 text-xl"/>Contribute
+                    </div>
+                  </Link>
+                </li>
+                <Logout/>
               </ul>
             </div>
           </div>
