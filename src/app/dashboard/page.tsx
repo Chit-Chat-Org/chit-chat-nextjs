@@ -9,50 +9,61 @@ import { toast } from "react-toastify";
 import Prompt from "../Components/Prompt";
 
 
-const page = () => {
-  let UserId: string | null=null;
-  if (typeof window !== 'undefined') {
-    
-    UserId = localStorage.getItem('UserId')
-  }
-  else{
-    toast.error("Please Login !", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-  }
-  const [Data, setData] = useState({
-    response:{
-      data:[]
-    }
-  })
-  const [AI, setAI] = useState({
-    response:{
-      data:[]
-    }
-  })
-  const value = async()=>{
-    const data = await getOrganizationById(UserId)
-    setData(data)
-  }
-  useEffect(() => {
-    value()
-  }, [])
-
-  const valueAi = async()=>{
-    const data = await getAiModelById(UserId)
-    setAI(data)
-  }
-  useEffect(() => {
-    valueAi()
-  }, [])
+const Page = () => {
+  const [UserId, setUserId] = useState<string | null>(null);
   
+  useEffect(() => {
+      if (typeof window !== 'undefined') {
+          setUserId(localStorage.getItem('UserId'));
+      } else {
+          toast.error("Please Login !", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+          });
+      }
+  }, []);
+
+  const [Data, setData] = useState({
+      response: {
+          data: []
+      }
+  });
+
+  const [AI, setAI] = useState({
+      response: {
+          data: []
+      }
+  });
+
+  const value = async () => {
+      if (UserId) {
+          const data = await getOrganizationById(UserId);
+          setData(data);
+      }
+  };
+
+  useEffect(() => {
+      value();
+  }, [UserId]);  // UserId added to dependency array
+
+  const valueAi = async () => {
+      if (UserId) {
+          const data = await getAiModelById(UserId);
+          setAI(data);
+      }
+  };
+
+  useEffect(() => {
+      valueAi();
+  }, [UserId]);  // UserId added to dependency array
+
+
   return (
     <>
       <div className="w-screen min-h-screen bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
@@ -132,4 +143,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

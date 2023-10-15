@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { Auth } from "../api/apiCall";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const [isLoading, setisLoading] = useState(false);
   const [User, setUser] = useState({
@@ -137,4 +137,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

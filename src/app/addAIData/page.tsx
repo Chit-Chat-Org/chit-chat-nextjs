@@ -105,7 +105,7 @@ const AddAiModel = () => {
       url: url,
       openAIApi: openAIApi
     });
-  }, [selectedOrganization, url , openAIApi]);
+  }, [selectedOrganization, url, UserId, openAIApi]);
 
   const fetchFile = async () => {
     if (!File) {

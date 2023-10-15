@@ -9,7 +9,7 @@ import { BiSolidCopy } from "react-icons/bi";
 import javascript from "highlight.js/lib/languages/javascript";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const codeRef = useRef<HTMLPreElement | null>(null);
 
   useEffect(() => {
@@ -97,4 +97,4 @@ https://cdn.jsdelivr.net/gh/apurvjha123/Chit-Chat-Server/js-interface/script.js 
   );
 };
 
-export default page;
+export default Page;

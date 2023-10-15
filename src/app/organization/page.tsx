@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { addOrganization } from '../api/apiCall'
 import Prompt from "../Components/Prompt";
 
-const page = () => {
+const Page = () => {
 
   let UserId: string | null=null;
   if (typeof window !== 'undefined') {
@@ -17,7 +17,7 @@ const page = () => {
   }
 
   const router = useRouter();
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [Organization, setOrganization] = useState({
     userId:localStorage.getItem('UserId'),
     OrganizationName: "",
@@ -34,9 +34,9 @@ const page = () => {
   };
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setisLoading(true);
+    setIsLoading(true);
     const res = await addOrganization(Organization);
-    setisLoading(false);
+    setIsLoading(false);
     if (res.status == 200) {
       toast("Organization Submitted !", {
         position: "top-right",
@@ -139,4 +139,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
