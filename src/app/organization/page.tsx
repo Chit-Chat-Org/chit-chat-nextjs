@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { toast } from "react-toastify";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -19,13 +19,22 @@ const Page = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [Organization, setOrganization] = useState({
-    userId:localStorage.getItem('UserId'),
+    userId:"",
     OrganizationName: "",
     OrganizationWebsite: "",
     organizationEmail: "",
     OrganizationPhone: "",
     isActive: true,
   });
+
+  useEffect(() => {
+    const userIdFromStorage = localStorage.getItem('UserId');
+    setOrganization(prevState => ({
+        ...prevState, 
+        userId: userIdFromStorage ? userIdFromStorage : prevState.userId
+    }));
+}, []);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOrganization({
       ...Organization,
