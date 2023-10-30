@@ -41,7 +41,6 @@ const Page = () => {
         progress: undefined,
         theme: "light",
       });
-      localStorage.setItem('UserId',res.data.response.data)
       router.push("/organization")
     } else {
       toast.error("User Already Exist!", {
@@ -58,8 +57,7 @@ const Page = () => {
   };
   return (
     <>
-      <div className="w-screen min-h-screen bg-gradient-to-r from-pink-200 via-red-200 to-yellow-100">
-        <Navbar />
+    <Navbar />
         <div className="min-h-screen flex items-center justify-center bg-opacity-50 sm:pt-24 pt-30">
           <form
             onSubmit={handleSubmit}
@@ -113,7 +111,6 @@ const Page = () => {
             <p className="font-sans font-normal flex justify-center p-2">Already Have Account  <Link href="/login" className="text-sky-500 underline italic pl-2">Login</Link></p>
           </form>
         </div>
-      </div>
     </>
   );
 };

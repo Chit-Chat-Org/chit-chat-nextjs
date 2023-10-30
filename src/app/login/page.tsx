@@ -27,26 +27,6 @@ const Page = () => {
     setisLoading(true);
     const res = await Auth(User);
     setisLoading(false);
-    if (
-      res &&
-      res.data &&
-      res.data.response &&
-      res.data.response.data &&
-      res.data.response.data._id
-    ) {
-      localStorage.setItem("UserId", res.data.response.data._id);
-    } else {
-      toast.error("Unexpected response structure.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
     if (res.data?.status != "Failed") {
       toast("Organization Submitted !", {
         position: "top-right",
@@ -74,64 +54,62 @@ const Page = () => {
   };
   return (
     <>
-      <div className="w-screen min-h-screen bg-gradient-to-r from-pink-200 via-red-200 to-yellow-100">
-        <Navbar />
-        <div className="min-h-screen flex items-center justify-center bg-opacity-50 sm:pt-24 pt-30">
-          <form
-            onSubmit={handleSubmit}
-            className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"
-            style={{ backdropFilter: "blur(4px)" }}
-          >
-            <div className="text-gray-950 flex justify-center text-2xl">
-              Log In
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-600">UserName</label>
-              <input
-                type="text"
-                name="UserName"
-                required
-                minLength={6}
-                onChange={handleChange}
-                className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-pink-500"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-600">Password</label>
-              <input
-                type="password"
-                name="Password"
-                required
-                minLength={6}
-                maxLength={12}
-                onChange={handleChange}
-                title="Please enter a 10-digit mobile number"
-                className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none  focus:border-pink-500"
-              />
-            </div>
-            {isLoading ? (
-              <button
-                disabled
-                className="w-full flex justify-center py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700"
-              >
-                <AiOutlineLoading3Quarters className="animate-spin" />
-              </button>
-            ) : (
-              <button className="w-full py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
-                Submit
-              </button>
-            )}
-            <p className="font-sans font-normal flex justify-center p-2">
-              Create An Account{" "}
-              <Link
-                href="/sign-up"
-                className="text-sky-500 underline italic pl-2"
-              >
-                Sign Up
-              </Link>
-            </p>
-          </form>
-        </div>
+      <Navbar />
+      <div className="min-h-screen flex items-center justify-center bg-opacity-50 sm:pt-24 pt-30">
+        <form
+          onSubmit={handleSubmit}
+          className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"
+          style={{ backdropFilter: "blur(4px)" }}
+        >
+          <div className="text-gray-950 flex justify-center text-2xl">
+            Log In
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-600">UserName</label>
+            <input
+              type="text"
+              name="UserName"
+              required
+              minLength={6}
+              onChange={handleChange}
+              className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-pink-500"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-600">Password</label>
+            <input
+              type="password"
+              name="Password"
+              required
+              minLength={6}
+              maxLength={12}
+              onChange={handleChange}
+              title="Please enter a 10-digit mobile number"
+              className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none  focus:border-pink-500"
+            />
+          </div>
+          {isLoading ? (
+            <button
+              disabled
+              className="w-full flex justify-center py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700"
+            >
+              <AiOutlineLoading3Quarters className="animate-spin" />
+            </button>
+          ) : (
+            <button className="w-full py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
+              Submit
+            </button>
+          )}
+          <p className="font-sans font-normal flex justify-center p-2">
+            Create An Account{" "}
+            <Link
+              href="/sign-up"
+              className="text-sky-500 underline italic pl-2"
+            >
+              Sign Up
+            </Link>
+          </p>
+        </form>
       </div>
     </>
   );

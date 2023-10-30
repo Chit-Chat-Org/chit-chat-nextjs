@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react";
+import Cookies from "js-cookie";
 
 const Logout = () => {
   return (
@@ -8,7 +9,7 @@ const Logout = () => {
       <li>
         <div
           onClick={() => {
-            localStorage.removeItem("UserId");
+            Cookies.remove("UserId");
             window.location.reload();  // This will refresh the page
           }}
           

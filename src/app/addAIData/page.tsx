@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
-import { fetchs } from "../api/apiCall";
+import { getOrganizationById } from "../api/apiCall";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Prompt from "../Components/Prompt";
+import Cookies from "js-cookie";
 
 type AiModel = {
   organization: {
@@ -19,10 +20,10 @@ type AiModel = {
 };
 const AddAiModel = () => {
   const router = useRouter();
-  let UserId: string | null=null;
+  let UserId: string | undefined;
   if (typeof window !== 'undefined') {
     
-    UserId = localStorage.getItem('UserId')
+    UserId = Cookies.get('UserId')
   }
   const [isLoading, setisLoading] = useState(false);
   const [selectedOrganization, setSelectedOrganization] = useState<string>("");
@@ -42,7 +43,7 @@ const AddAiModel = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await fetchs();
+      const result = await getOrganizationById();
       if (result && result.response && result.response.data) {
         setOrgData(result.response.data);
       }
@@ -53,14 +54,14 @@ const AddAiModel = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.item(0);
-    if (selectedFile && selectedFile.type === 'text/plain') {
+    if (selectedFile && selectedFile.type === 'text/plain' || "application/pdf" || "text/csv") {
       const file = e.target.files?.item(0);
       if (file) {
         setFile(file);
       }
     }
     else{
-      toast.error("Only txt files are allowed!", {
+      toast.error("Only txt, pdf or csv files are allowed!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -229,7 +230,6 @@ const AddAiModel = () => {
   const isFormFilled = Boolean(File) && Boolean(selectedOrganization);
   return (
     <>
-      <div className="w-screen min-h-screen bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
         <Navbar />
         {
           UserId?(
@@ -311,7 +311,6 @@ const AddAiModel = () => {
             <Prompt/>
           )
         }
-      </div>
     </>
   );
 };

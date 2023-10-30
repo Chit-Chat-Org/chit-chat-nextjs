@@ -2,20 +2,15 @@
 
 import React, { useRef, useEffect } from "react";
 import Navbar from "../Components/Navbar";
-import hljs from "highlight.js";
-import "highlight.js/styles/default.css";
-import "./style.css";
 import { BiSolidCopy } from "react-icons/bi";
-import javascript from "highlight.js/lib/languages/javascript";
 import Link from "next/link";
 
 const Page = () => {
   const codeRef = useRef<HTMLPreElement | null>(null);
 
   useEffect(() => {
-    if (codeRef.current) {
-      hljs.registerLanguage("javascript", javascript);
-      hljs.highlightBlock(codeRef.current);
+    if (codeRef.current && window.Prism) {
+      window.Prism.highlightAllUnder(codeRef.current);
     }
   }, []);
 
@@ -25,11 +20,9 @@ const Page = () => {
       navigator.clipboard.writeText(code);
     }
   };
-
   return (
     <>
-      <div className="w-screen min-h-screen bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
-        <Navbar />
+      <Navbar />
         <div className="sm:min-h-screen min-h-[54rem] flex items-center justify-center bg-opacity-50 p-4 sm:pt-28 lg:pt-30">
           <div className="relative w-full max-w-xl mx-auto">
             <div className="absolute top-[-50px] left-0 space-x-4 bg-opacity-40 bg-white backdrop-blur-md rounded px-4 py-2 flex flex-row">
@@ -53,7 +46,7 @@ const Page = () => {
             <div className="relative z-0">
               <pre
                 ref={codeRef}
-                className="overflow-auto rounded-lg shadow-xl hljs p-2 sm:text-base text-sm w-full"
+                className="language-javascript overflow-auto rounded-lg shadow-xl hljs p-2 sm:text-base text-sm w-full"
               >
                 <code>
                   {`   async function generateAnswer(userQuestion, apiKey) {
@@ -78,7 +71,6 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
