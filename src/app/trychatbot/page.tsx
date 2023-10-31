@@ -73,7 +73,8 @@ const Page: React.FC = () => {
     
         <>
         <Navbar />
-        
+        {UserId? (
+          <>
           {isModalVisible && <DocsModal onClick={closeModal} {...Value}/>}
       <div className=" sm:pt-20 pt-48 overflow-y-auto flex items-center justify-center">
         <div className="bg-white bg-opacity-50 rounded p-8 w-96">
@@ -182,6 +183,10 @@ const Page: React.FC = () => {
         </div>
         <ChatBotComponent {...config} />
       </div>
+          </>
+        ):(
+          <Prompt/>
+        )}
          
         </>
       
