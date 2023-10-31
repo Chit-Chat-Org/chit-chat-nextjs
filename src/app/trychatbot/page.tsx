@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ChatBotComponent from "./ChatBotComponent";
 import Navbar from "../Components/Navbar";
 import Cookies from "js-cookie";
 import Prompt from "@/app/Components/Prompt";
+import DocsModal from "./Docs/DocsModal";
+
 
 const Page: React.FC = () => {
   const UserId: string | undefined = Cookies.get("UserId");
@@ -24,18 +26,55 @@ const Page: React.FC = () => {
     suggestions: [],
     rateLimitDuration: 5000,
   });
+  const [Value,setValue] = useState<{
+    apiKey: string;
+    initialMessage: string;
+    chatbotTitle: string;
+    brandImage: string;
+    suggestions: string[];
+    rateLimitDuration: number;}>({
+      apiKey: "",
+    initialMessage: "Hello! How Can I Assist You ?",
+    chatbotTitle: "Chat bot",
+    brandImage:
+      "https://www.kindpng.com/picc/m/179-1798038_chatbots-builder-pricing-crozdesk-free-chatbot-hd-png.png",
+    suggestions: [],
+    rateLimitDuration: 5000,
+    })
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here, config object is ready to be used or sent somewhere.
     console.log(config);
+    setIsModalVisible(true);
+    setValue(config);
   };
 
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
+
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if ((event.target as HTMLElement).classList.contains('modal-background')) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <>
-      {UserId?(
+    
         <>
         <Navbar />
+        
+          {isModalVisible && <DocsModal onClick={closeModal} {...Value}/>}
       <div className=" sm:pt-20 pt-48 overflow-y-auto flex items-center justify-center">
         <div className="bg-white bg-opacity-50 rounded p-8 w-96">
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -46,6 +85,7 @@ const Page: React.FC = () => {
               <input
                 className="block bg-pink-400 bg-opacity-10 rounded p-2 w-full"
                 placeholder="Enter your APIKEY"
+                required
                 value={config.apiKey}
                 onChange={(e) =>
                   setConfig((prev) => ({ ...prev, apiKey: e.target.value }))
@@ -136,17 +176,15 @@ const Page: React.FC = () => {
               type="submit"
               className="mt-4 bg-pink-500 text-white rounded p-2"
             >
-              Submit
+              Integrate
             </button>
           </form>
         </div>
         <ChatBotComponent {...config} />
       </div>
+         
         </>
-      ):(
-        <Prompt/>
-      )}
-    </>
+      
   );
 };
 
