@@ -227,7 +227,7 @@ const AddAiModel = () => {
       });
       setisLoading(false)
   };
-  const isFormFilled = Boolean(File) && Boolean(selectedOrganization);
+  const isFormFilled = Boolean(File) && Boolean(selectedOrganization) && Boolean(openAIApi);
   return (
     <>
         <Navbar />
@@ -238,7 +238,7 @@ const AddAiModel = () => {
               <AiOutlineLoading3Quarters className="animate-spin text-6xl" />
               </div>
             ):(
-              <div className="sm:pt-32 pt-52 top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50">
+              <div className="sm:pt-24 pt-44 top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50">
               <div className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10">
                 <h2 className="text-xl mb-4 font-bold">Train Data</h2>
     
@@ -250,6 +250,7 @@ const AddAiModel = () => {
                   <input
                     onChange={handleFileChange}
                     type="file"
+                    accept=".txt, .pdf, .csv"
                     className="mb-4 p-2 file:bg-pink-300 file:rounded-xl file:active:bg-pink-400 file:shadow-lg file:border-pink-600"
                   />
                   <button

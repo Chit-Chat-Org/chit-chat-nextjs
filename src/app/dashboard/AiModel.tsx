@@ -28,6 +28,8 @@ const AiModel = ({
     apiKey: string;
     createdAt: string;
   };
+
+  
   const [Details, setDetails] = useState<DetailsType>({
     organizationName: "",
     uploadKnowledge: "",
@@ -80,7 +82,7 @@ const AiModel = ({
   return (
     <>
       <div className="flex justify-between">
-        <div className="rounded-xl p-2 shadow-xl w-full">
+        <div className="rounded-xl p-2 shadow-md w-full">
           <div className="flex justify-between items-center">
             <div className="flex-none rounded-md mr-2">{organizationName}</div>
 

@@ -72,7 +72,7 @@ const Page = () => {
     <>
       <Navbar />
       {UserId ? (
-        <div className="min-h-screen flex items-center justify-center bg-opacity-50 sm:pt-24 pt-30">
+        <div className="min-h-screen flex items-center justify-center bg-opacity-50 sm:pt-24 pt-48">
           <form
             onSubmit={handleSubmit}
             className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"

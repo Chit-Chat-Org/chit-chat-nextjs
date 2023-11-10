@@ -74,7 +74,7 @@ const Page = () => {
             <div className="flex justify-center p-2 font-serif text-gray-800 font-bold text-2xl">
               Organizations
             </div>
-            <div className=" grid grid-cols-2">
+            <div className="grid sm:grid-cols-2 grid-cols-1">
               {Data &&
                 Data.response &&
                 Data.response.data &&
@@ -126,7 +126,11 @@ const Page = () => {
                     },
                     index: React.Key | null | undefined
                   ) => (
-                    <Link href={`/trychatbot`} key={index}>
+                    <Link href={`/trychatbot`} onClick={
+                      ()=>{
+                        localStorage.setItem('apiKey', value.apiKey);
+                      }
+                    } key={index}>
                       <AiModel
                         organizationName={value.organizationName}
                         uploadKnowledge={value.uploadKnowledge}
