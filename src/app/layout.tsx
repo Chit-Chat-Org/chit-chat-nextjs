@@ -2,13 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ToastContainerWrapper from "./Components/ToastProvider";
+import { constructMetadata } from "./Components/metadata";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Chit-Chat",
-  description: "A chatbot application that can create chatbot for your data",
-};
+export const metadata = constructMetadata()
 
 export default function RootLayout({
   children,
