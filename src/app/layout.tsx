@@ -1,5 +1,4 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ToastContainerWrapper from "./Components/ToastProvider";
 import { constructMetadata } from "./Components/metadata";
