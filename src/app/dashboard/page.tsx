@@ -7,16 +7,14 @@ import { getOrganizationById, getAiModelById } from "../api/apiCall";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Prompt from "../Components/Prompt";
-import Cookies from "js-cookie";
 import Link from "next/link";
 
 const Page = () => {
   const [UserId, setUserId] = useState<string | null>(null);
-  const val = Cookies.get("UserId");
-  const UserIds : string | null = localStorage.getItem("UserId")
+
   useEffect(() => {
     if (typeof window !== "undefined") {
-      
+      const UserIds: string | null = localStorage.getItem("UserId");
       setUserId(UserIds);
     } else {
       toast.error("Please Login !", {
@@ -30,7 +28,7 @@ const Page = () => {
         theme: "light",
       });
     }
-  }, [UserIds]);
+  }, []);
   const [Data, setData] = useState({
     response: {
       data: [],

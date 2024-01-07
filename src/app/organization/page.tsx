@@ -10,9 +10,25 @@ import Prompt from "../Components/Prompt";
 
 
 const Page = () => {
-  let UserId: string | null ;
-    UserId = localStorage.getItem("UserId");
+  const [UserId, setUserId] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const UserIds: string | null = localStorage.getItem("UserId");
+      setUserId(UserIds);
+    } else {
+      toast.error("Please Login !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  }, []);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [Organization, setOrganization] = useState({
