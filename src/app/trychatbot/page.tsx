@@ -3,13 +3,30 @@
 import React, { useEffect, useRef, useState } from "react";
 import ChatBotComponent from "./ChatBotComponent";
 import Navbar from "../Components/Navbar";
-import Cookies from "js-cookie";
 import Prompt from "@/app/Components/Prompt";
 import DocsModal from "./Docs/DocsModal";
-import { FaPaste } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Page: React.FC = () => {
-  const UserId: string | undefined = Cookies.get("UserId");
+  const [UserId, setUserId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const UserIds: string | null = localStorage.getItem("UserId");
+      setUserId(UserIds);
+    } else {
+      toast.error("Please Login !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  }, []);
   const [config, setConfig] = useState<{
     apiKey: string;
     initialMessage: string;
