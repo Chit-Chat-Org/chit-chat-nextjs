@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Prompt from "../Components/Prompt";
-import Cookies from "js-cookie";
 import { serverUrl } from "../api/serverUrl";
 
 
@@ -24,15 +23,21 @@ type AiModel = {
 };
 const AddAiModel = () => {
   const router = useRouter();
-  let UserId: string | null;
-  UserId = localStorage.getItem('UserId')
+  const [UserId, setUserId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const UserIds: string | null = localStorage.getItem('UserId');
+      setUserId(UserIds);
+    }
+  }, []);
   const [isLoading, setisLoading] = useState(false);
   const [selectedOrganization, setSelectedOrganization] = useState<string>("");
   const [orgData, setOrgData] = useState<any[]>([]);
   const [File, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState<string>("");
   const [openAIApi, setOpenAIApi] = useState<string>("");
-
+  
   const [AiModel, setAiModel] = useState<AiModel>({
     organization: {
       userId:"",
@@ -41,9 +46,9 @@ const AddAiModel = () => {
     url: "",
     openAIApi:""
   });
-
   useEffect(() => {
     async function fetchData() {
+      console.log(UserId)
       const result = await getOrganizationById(UserId);
       if (result && result.response && result.response.data) {
         setOrgData(result.response.data);
@@ -51,7 +56,7 @@ const AddAiModel = () => {
     }
 
     fetchData();
-  }, []);
+  }, [UserId]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.item(0);
