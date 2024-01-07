@@ -9,7 +9,7 @@ const Logout = () => {
       <li>
         <div
           onClick={() => {
-            Cookies.remove("UserId");
+            localStorage.removeItem("UserId")
             window.location.reload();
           }}
           

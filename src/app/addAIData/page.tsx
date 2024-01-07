@@ -9,6 +9,10 @@ import { useRouter } from 'next/navigation';
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Prompt from "../Components/Prompt";
 import Cookies from "js-cookie";
+import { serverUrl } from "../api/serverUrl";
+
+
+const urls = serverUrl({Production : true})
 
 type AiModel = {
   organization: {
@@ -20,11 +24,8 @@ type AiModel = {
 };
 const AddAiModel = () => {
   const router = useRouter();
-  let UserId: string | undefined;
-  if (typeof window !== 'undefined') {
-    
-    UserId = Cookies.get('UserId')
-  }
+  let UserId: string | null;
+  UserId = localStorage.getItem('UserId')
   const [isLoading, setisLoading] = useState(false);
   const [selectedOrganization, setSelectedOrganization] = useState<string>("");
   const [orgData, setOrgData] = useState<any[]>([]);
@@ -43,7 +44,7 @@ const AddAiModel = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await getOrganizationById();
+      const result = await getOrganizationById(UserId);
       if (result && result.response && result.response.data) {
         setOrgData(result.response.data);
       }
@@ -128,7 +129,7 @@ const AddAiModel = () => {
 
     try {
       const res = await axios.post(
-        "https://chit-chat.tech/api/v1/upload",
+        urls + "/api/v1/upload",
         formData
       );
       toast("Successfully, Submitted !", {
@@ -160,7 +161,7 @@ const AddAiModel = () => {
 
   const SubmitAiModel = async () => {
     const res = await axios.post(
-      "https://chit-chat.tech/api/v1/addAiTrainingModel",
+      urls + "/api/v1/addAiTrainingModel",
       AiModel
     );
   };

@@ -11,12 +11,13 @@ import Cookies from "js-cookie";
 import Link from "next/link";
 
 const Page = () => {
-  const [UserId, setUserId] = useState<string | undefined>(undefined);
+  const [UserId, setUserId] = useState<string | null>(null);
   const val = Cookies.get("UserId");
-
+  const UserIds : string | null = localStorage.getItem("UserId")
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setUserId(val);
+      
+      setUserId(UserIds);
     } else {
       toast.error("Please Login !", {
         position: "top-right",
@@ -29,8 +30,7 @@ const Page = () => {
         theme: "light",
       });
     }
-  }, [val]);
-
+  }, [UserIds]);
   const [Data, setData] = useState({
     response: {
       data: [],
@@ -45,7 +45,7 @@ const Page = () => {
 
   const value = async () => {
     if (UserId) {
-      const data = await getOrganizationById();
+      const data = await getOrganizationById(UserId);
       setData(data);
     }
   };
@@ -56,7 +56,7 @@ const Page = () => {
 
   const valueAi = async () => {
     if (UserId) {
-      const data = await getAiModelById();
+      const data = await getAiModelById(UserId);
       setAI(data);
     }
   };

@@ -1,21 +1,24 @@
 import axios from "axios";
+import { serverUrl } from "./serverUrl";
 
-export const getOrganizationById = async () => {
+
+const url = serverUrl({Production : true})
+export const getOrganizationById = async (UserId: string | null) => {
   const res = await axios.get(
-    `https://chit-chat.tech/api/v1/getOrganizationById`,
+    url + `/api/v1/getOrganizationById`,
     {
-      withCredentials: true,
+      params: { UserId: UserId }, // Sending UserId as a query parameter
     }
   );
 
   return res.data;
 };
 
-export const getAiModelById = async () => {
+export const getAiModelById = async (UserId: string | null) => {
   const res = await axios.get(
-    `https://chit-chat.tech/api/v1/getAiModelById`,
+    url + `/api/v1/getAiModelById`,
     {
-      withCredentials: true
+      params: { UserId: UserId }, // Sending UserId as a query parameter
     }
   );
 
@@ -32,7 +35,7 @@ type organization = {
 
 export const addOrganization = async (Organization: organization) => {
   const data = await axios.post(
-    "https://chit-chat.tech/api/v1/newOrganization",
+    url + "/api/v1/newOrganization",
     Organization
   );
 
@@ -43,7 +46,7 @@ type user = {
   Password: string;
 };
 export const Auth = async (User: user) => {
-  const data = await axios.post("https://chit-chat.tech/register/login", User, {
+  const data = await axios.post(url + "/register/login", User, {
     withCredentials: true,
   });
 
@@ -55,7 +58,7 @@ type users = {
   Password: string;
 };
 export const SignUp = async (User: users) => {
-  const data = await axios.post("https://chit-chat.tech/register/signup", User,{
+  const data = await axios.post(url + "/register/signup", User,{
     withCredentials:true
   });
 

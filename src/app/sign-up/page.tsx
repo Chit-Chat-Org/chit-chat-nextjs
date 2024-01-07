@@ -29,8 +29,9 @@ const Page = () => {
     setisLoading(true);
     const res = await SignUp(User);
     setisLoading(false);
-    
+    console.log(res)
     if (res.data?.status == "Success") {
+      localStorage.setItem('UserId',res.data.response.data)
       toast("Organization Submitted !", {
         position: "top-right",
         autoClose: 5000,

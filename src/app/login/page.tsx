@@ -28,6 +28,7 @@ const Page = () => {
     const res = await Auth(User);
     setisLoading(false);
     if (res.data?.status != "Failed") {
+      localStorage.setItem('UserId',res.data.response.data._id)
       toast("Organization Submitted !", {
         position: "top-right",
         autoClose: 5000,

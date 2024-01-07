@@ -7,11 +7,11 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { addOrganization } from "../api/apiCall";
 import Prompt from "../Components/Prompt";
-import Cookies from "js-cookie";
+
 
 const Page = () => {
-  let UserId: string | undefined ;
-    UserId = Cookies.get("UserId");
+  let UserId: string | null ;
+    UserId = localStorage.getItem("UserId");
 
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +25,7 @@ const Page = () => {
   });
 
   useEffect(() => {
-    const userIdFromStorage = Cookies.get("UserId");
+    const userIdFromStorage = localStorage.getItem("UserId");
     setOrganization((prevState) => ({
       ...prevState,
       userId: userIdFromStorage ? userIdFromStorage : prevState.userId,

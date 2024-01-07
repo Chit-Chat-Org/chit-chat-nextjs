@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ImCancelCircle } from "react-icons/im";
+import { serverUrl } from "../api/serverUrl";
 
+const url = serverUrl({Production: true})
 interface ChatBotProps {
   initialMessage?: string;
   chatbotTitle?: string;
@@ -60,7 +62,7 @@ const ChatBotComponent: React.FC<ChatBotProps> = ({
 
   async function generateAnswers(userQuestion: string) {
     try {
-      let chatAPIUrl = `https://chit-chat.tech/api/v1/QnARetrieval?key=${apiKey}`;
+      let chatAPIUrl = url + `/api/v1/QnARetrieval?key=${apiKey}`;
 
       if (switchAPI) {
         chatAPIUrl = `https://your-hosted-domain/api/v1/organization/generateCompletion?key=${apiKey}`;
