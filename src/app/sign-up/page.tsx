@@ -7,6 +7,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from 'next/navigation';
 import { SignUp } from '../api/apiCall'
 import Link from "next/link";
+import OAuth from "../Components/OAuth";
 
 const Page = () => {
   const router = useRouter();
@@ -100,6 +101,7 @@ const Page = () => {
                 className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none  focus:border-pink-500"
               />
             </div>
+            <OAuth />
             {isLoading ? (
               <button disabled className="w-full flex justify-center py-2 px-4 bg-pink-600 text-white rounded-md hover:bg-pink-700">
                 <AiOutlineLoading3Quarters className="animate-spin" />

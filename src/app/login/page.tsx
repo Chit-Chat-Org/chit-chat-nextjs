@@ -7,6 +7,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { Auth } from "../api/apiCall";
 import Link from "next/link";
+import OAuth from "../Components/OAuth";
 
 const Page = () => {
   const router = useRouter();
@@ -89,6 +90,7 @@ const Page = () => {
               className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none  focus:border-pink-500"
             />
           </div>
+          <OAuth />
           {isLoading ? (
             <button
               disabled

@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^1.5.1",
     "chit-chat-react": "^1.0.1",
+    "firebase": "^10.9.0",
     "highlight.js": "^11.9.0",
     "js-cookie": "^3.0.5",
     "next": "^13.5.4",

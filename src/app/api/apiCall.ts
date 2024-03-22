@@ -62,7 +62,26 @@ export const SignUp = async (User: users) => {
     withCredentials:true
   });
 
+
   return data;
+
+
+  
 };
+type Users = {
+  UserName: string;
+  UserEmail: string;
+  avatar: string;
+};
+export const OAuth = async (User: Users) => {
+  const data = await axios.post(url + "/register/google", User,{
+    withCredentials:true
+  });
+
+  return data;
+
+}
+
+
 
 
