@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "dist/types/**/*.ts",
     "build/types/**/*.ts"
-  ],
+, "src/app/firebase.js"  ],
   "exclude": [
     "node_modules"
   ]
