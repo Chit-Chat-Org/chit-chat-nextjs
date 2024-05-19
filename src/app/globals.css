@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 .glass {
-    backdrop-filter: blur(4px);
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add the button animation styles */
+.sign-up-button {
+  transition: transform 0.1s ease-in-out;
+}
+
+.sign-up-button:active {
+  transform: scale(0.95);
+}
