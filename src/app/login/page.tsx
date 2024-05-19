@@ -65,7 +65,7 @@ const Page = () => {
           <div className="text-gray-950 flex justify-center text-2xl">
             Log In
           </div>
-          <div className="mb-4">
+          <div className="mb-4 required">
             <label className="block text-gray-600">UserName</label>
             <input
               type="text"
@@ -76,7 +76,7 @@ const Page = () => {
               className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-pink-500"
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 required">
             <label className="block text-gray-600">Password</label>
             <input
               type="password"
