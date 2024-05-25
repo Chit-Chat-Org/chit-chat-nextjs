@@ -94,7 +94,7 @@ const Page = () => {
             className="p-8 bg-white rounded-lg shadow-xl w-96 bg-opacity-10"
             style={{ backdropFilter: "blur(4px)" }}
           >
-            <div className="mb-4">
+            <div className="mb-4 required">
               <label className="block text-gray-600">Organization Name</label>
               <input
                 type="text"
@@ -104,7 +104,7 @@ const Page = () => {
                 className="mt-1 w-full px-4 py-2 rounded-md border border-gray-300 bg-opacity-50 bg-pink-50 focus:outline-none focus:border-indigo-500"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 required">
               <label className="block text-gray-600">
                 Organization Website
               </label>
@@ -116,7 +116,7 @@ const Page = () => {
                 className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-indigo-500"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 required">
               <label className="block text-gray-600">Organization Email</label>
               <input
                 type="email"
@@ -126,7 +126,7 @@ const Page = () => {
                 className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none focus:border-indigo-500"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 required">
               <label className="block text-gray-600">Organization Phone</label>
               <input
                 type="number"
