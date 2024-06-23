@@ -3,33 +3,35 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import { toast } from "react-toastify";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { AiOutlineLoading3Quarters, AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { Auth } from "../api/apiCall";
 import Link from "next/link";
 
 const Page = () => {
   const router = useRouter();
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [User, setUser] = useState({
     UserName: "",
     Password: "",
   });
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+
+  const handleChange = (event) => {
     setUser({
       ...User,
       [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setisLoading(true);
+    setIsLoading(true);
     const res = await Auth(User);
-    setisLoading(false);
-    if (res.data?.status != "Failed") {
-      localStorage.setItem('UserId',res.data.response.data._id)
-      toast("Organization Submitted !", {
+    setIsLoading(false);
+    if (res.data?.status !== "Failed") {
+      localStorage.setItem('UserId', res.data.response.data._id);
+      toast("Login Successful!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -41,7 +43,7 @@ const Page = () => {
       });
       router.push("/dashboard");
     } else {
-      toast.error("Failed to Login !", {
+      toast.error("Failed to Login!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -53,6 +55,11 @@ const Page = () => {
       });
     }
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       <Navbar />
@@ -78,16 +85,28 @@ const Page = () => {
           </div>
           <div className="mb-4 required">
             <label className="block text-gray-600">Password</label>
-            <input
-              type="password"
-              name="Password"
-              required
-              minLength={6}
-              maxLength={12}
-              onChange={handleChange}
-              title="Please enter a 10-digit mobile number"
-              className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none  focus:border-pink-500"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="Password"
+                required
+                minLength={6}
+                maxLength={12}
+                onChange={handleChange}
+                className="mt-1 w-full px-4 py-2 rounded-md border bg-opacity-50 bg-pink-50 border-gray-300 focus:outline-none  focus:border-pink-500"
+              />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="absolute inset-y-0 right-0 flex items-center px-4 focus:outline-none"
+              >
+                {showPassword ? (
+                  <AiFillEyeInvisible className="h-5 w-5 text-gray-500" />
+                ) : (
+                  <AiFillEye className="h-5 w-5 text-gray-500" />
+                )}
+              </button>
+            </div>
           </div>
           {isLoading ? (
             <button
@@ -103,10 +122,7 @@ const Page = () => {
           )}
           <p className="font-sans font-normal flex justify-center p-2">
             Create An Account{" "}
-            <Link
-              href="/sign-up"
-              className="text-sky-500 underline italic pl-2"
-            >
+            <Link href="/sign-up" className="text-sky-500 underline italic pl-2">
               Sign Up
             </Link>
           </p>
