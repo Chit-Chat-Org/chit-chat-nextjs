@@ -1,13 +1,13 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js",
-  "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js",
-  "/(auth)/sign-up/verify/page": "app/(auth)/sign-up/verify/page.js",
   "/(components)/page": "app/(components)/page.js",
-  "/(components)/(content)/dashboard/page": "app/(components)/(content)/dashboard/page.js",
-  "/(components)/(content)/playground/[id]/page": "app/(components)/(content)/playground/[id]/page.js",
-  "/(components)/(content)/organization/page": "app/(components)/(content)/organization/page.js",
-  "/(components)/(content)/playground/page": "app/(components)/(content)/playground/page.js",
+  "/(auth)/sign-up/verify/page": "app/(auth)/sign-up/verify/page.js",
+  "/(auth)/sign-up/[[...sign-up]]/page": "app/(auth)/sign-up/[[...sign-up]]/page.js",
+  "/(components)/(content)/chatbotconfig/page": "app/(components)/(content)/chatbotconfig/page.js",
   "/(components)/(content)/docs/page": "app/(components)/(content)/docs/page.js",
-  "/(components)/(content)/chatbotconfig/page": "app/(components)/(content)/chatbotconfig/page.js"
+  "/(components)/(content)/dashboard/page": "app/(components)/(content)/dashboard/page.js",
+  "/(components)/(content)/organization/page": "app/(components)/(content)/organization/page.js",
+  "/(components)/(content)/playground/[id]/page": "app/(components)/(content)/playground/[id]/page.js",
+  "/(components)/(content)/playground/page": "app/(components)/(content)/playground/page.js"
 }
