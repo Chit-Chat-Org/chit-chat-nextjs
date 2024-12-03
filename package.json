@@ -58,7 +58,6 @@
     "react-day-picker": "^8.10.1",
     "react-dom": "^18",
     "react-dropzone": "^14.3.5",
-    "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.51.5",
     "react-resizable-panels": "^2.0.19",
     "sonner": "^1.4.41",
