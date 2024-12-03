@@ -31,7 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # - run: npm i
+      - run: npm ci
 
       - name: Set environment variables
         run: |
