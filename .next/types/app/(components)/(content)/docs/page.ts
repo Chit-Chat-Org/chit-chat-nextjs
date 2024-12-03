@@ -1,4 +1,4 @@
-// File: C:\Users\Apurv Krishn Jha\Desktop\chit-chat-next-v2\src\app\(components)\(content)\docs\page.tsx
+// File: C:\Users\Apurv Krishn Jha\Desktop\CHTBTY\chit-chat-next-v2\src\app\(components)\(content)\docs\page.tsx
 import * as entry from '../../../../../../src/app/(components)/(content)/docs/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

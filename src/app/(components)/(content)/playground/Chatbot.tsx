@@ -45,7 +45,7 @@ const Chatbot = ({ id }: { id: string }) => {
   const fetchBotResponse = async (userMessage: string) => {
     try {
       const response = await fetch(
-        `https://chit-chat.fun/api/v0.1/QnARetrieval?key=${playgroundData.apiKey}`,
+        `https://api.chit-chat.fun/api/v1/QnARetrieval?key=${playgroundData.apiKey}`,
         {
           method: "POST",
           headers: {

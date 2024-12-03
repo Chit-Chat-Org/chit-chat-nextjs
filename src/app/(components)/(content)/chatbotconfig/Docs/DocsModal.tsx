@@ -25,7 +25,7 @@ const DocsModal: React.FC<DocsModalProps> = ({
   onClick,
 }) => {
   const API_CODE = `async function generateAnswer(userQuestion) {
-    const chatAPIUrl = "https://chit-chat.fun/api/v1/QnARetrieval?key=${apiKey}";
+    const chatAPIUrl = "https://api.chit-chat.fun/api/v1/QnARetrieval?key=${apiKey}";
     const payloadBody = { prompt: userQuestion, llm: "${LLM}" };
 
     try {
