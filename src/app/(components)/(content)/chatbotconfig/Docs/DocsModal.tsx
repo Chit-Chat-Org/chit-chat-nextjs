@@ -119,7 +119,7 @@ export default function YourComponent() {
         setContent(`import requests
 
 def generate_answer(user_question):
-  chat_api_url = "http://chit-chat.fun/api/v1/QnARetrieval?key=${apiKey}"
+  chat_api_url = "https://api.chit-chat.fun/api/v1/QnARetrieval?key=${apiKey}"
   payload_body = {"prompt": user_question, "llm": "${LLM}"}
 
   try:

@@ -442,7 +442,7 @@ function playNotificationSound() {
 
 async function generateAnswares(userQuestion) {
   try {
-    let chatAPIUrl = `https://chit-chat.fun/api/v1/QnARetrieval?key=${chatbot.apiKey}`;
+    let chatAPIUrl = `https://api.chit-chat.fun/api/v1/QnARetrieval?key=${chatbot.apiKey}`;
 
     // if you want to switch to different API url then use this
     if (chatbot.switchAPI) {
